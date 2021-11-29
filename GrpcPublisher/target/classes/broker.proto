@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "com.utm.grpc";
+
+service broker {
+    rpc publish(Subject) returns (ResponseMessage);
+}
+
+message ResponseMessage {
+    string response = 1;
+}
+
+message Subject {
+    string title = 1;
+    string content = 2;
+}

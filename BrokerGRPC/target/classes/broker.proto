@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "com.utm.grpc";
+
+service broker {
+    rpc subscribe(SubscribeRequest) returns (stream ResponseMessage) {}
+    rpc publish(Subject) returns (ResponseMessage) {}
+}
+
+message SubscribeRequest {
+    string subject = 1;
+    string clientId = 2;
+}
+
+message ResponseMessage {
+    string response = 1;
+}
+
+message Subject {
+    string title = 1;
+    string content = 2;
+}

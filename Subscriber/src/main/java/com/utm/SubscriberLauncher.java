@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Main {
+public class SubscriberLauncher {
 
     private static InputStreamReader inputStreamReader;
     private static OutputStreamWriter outputStreamWriter;
@@ -19,12 +19,13 @@ public class Main {
     private static void sendSubscriptionRequest() {
         try {
             Scanner scanner = new Scanner(System.in);
+            System.out.println("Please input the subject you want to subscribe to");
+            String subject = scanner.nextLine();
             Socket brokerSocket = new Socket("localhost", 8088);
             inputStreamReader = new InputStreamReader(brokerSocket.getInputStream());
             outputStreamWriter = new OutputStreamWriter(brokerSocket.getOutputStream());
             bufferedReader = new BufferedReader(inputStreamReader);
             bufferedWriter = new BufferedWriter(outputStreamWriter);
-            String subject = scanner.nextLine();
             bufferedWriter.write("{\"subscriptionRequest\":" + subject + "}");
             bufferedWriter.newLine();
             bufferedWriter.flush();

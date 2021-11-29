@@ -9,7 +9,7 @@ import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
-public class Main {
+public class PublisherLauncher {
 
     public static void main(String[] args)  {
         System.out.println("A publisher has started");

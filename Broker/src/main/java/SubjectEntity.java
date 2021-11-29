@@ -31,4 +31,8 @@ public class SubjectEntity {
     public void addSubscriber(ClientThread subscriber) {
         subscribers.add(subscriber);
     }
+
+    public void removeSubscriber(ClientThread subscriber) {
+        subscribers.remove(subscriber);
+    }
 }

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class DataSource {
@@ -54,5 +55,13 @@ public class DataSource {
             }
         }
         return null;
+    }
+
+    public void removeConnection(String topic, ClientThread socketLoop) {
+        for (SubjectEntity subject : subjectEntities) {
+            if (subject.getTitle().equals(topic)) {
+                subject.removeSubscriber(socketLoop);
+            }
+        }
     }
 }

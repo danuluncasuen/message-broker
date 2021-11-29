@@ -28,7 +28,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        com.utm.Main
+                                        com.utm.BrokerLauncher
                                     </mainClass>
                                 </manifest>
                             </archive>
